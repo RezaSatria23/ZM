@@ -1325,7 +1325,7 @@
             outline: none;
             background: rgba(255, 255, 255, 0.2);
         }
-        
+
         textarea.form-control {
             min-height: 180px;
             resize: vertical;
@@ -1815,6 +1815,31 @@
                 width: 100px;
                 height: 50px;
             }
+        }
+        #service {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding-right: 2rem; /* Ruang untuk ikon panah */
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
+        }
+
+        #service option {
+            background: var(--contact-gradient);
+            color: white;
+        }
+
+        #service:focus {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(253, 121, 168, 0.2);
+            outline: none;
         }
     </style>
 </head>
