@@ -1816,14 +1816,15 @@
                 height: 50px;
             }
         }
-        /* Perbaikan khusus untuk dropdown layanan */
+        
+        /* PERBAIKAN UTAMA UNTUK DROPDOWN */
         #service {
             width: 100%;
             padding: 1rem 1.5rem;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 10px;
             font-size: 1rem;
-            background: rgba(255, 255, 255, 0.1);
+            background-color: transparent; /* Ini yang utama */
             color: white;
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -1835,23 +1836,39 @@
             background-size: 1rem;
         }
 
+        /* Solusi khusus untuk Chrome */
         #service option {
-            background: var(--contact-gradient);
+            background-color: rgba(30, 42, 58, 0.95); /* Warna gelap semi-transparan */
             color: white;
-            padding: 1rem;
+        }
+
+        /* Solusi untuk Firefox */
+        @-moz-document url-prefix() {
+            #service {
+                background-color: rgba(30, 42, 58, 0.8);
+                text-shadow: 0 0 0 white;
+            }
+            #service option {
+                background-color: rgba(30, 42, 58, 0.95);
+            }
+        }
+
+        /* Solusi untuk IE/Edge */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            #service {
+                background-color: rgba(30, 42, 58, 0.8);
+            }
+            #service option {
+                background-color: rgba(30, 42, 58, 0.95);
+            }
         }
 
         #service:focus {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: var(--accent);
             outline: none;
+            border-color: var(--accent);
             box-shadow: 0 0 0 3px rgba(253, 121, 168, 0.2);
         }
 
-        /* Untuk browser tertentu yang memerlukan penyesuaian tambahan */
-        #service::-ms-expand {
-            display: none;
-        }
     </style>
 </head>
 <body>
